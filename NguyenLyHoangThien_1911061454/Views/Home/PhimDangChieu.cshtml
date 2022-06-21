@@ -1,0 +1,62 @@
+﻿@model IEnumerable<NguyenLyHoangThien_1911061454.Models.LichChieu>
+
+@{
+    ViewBag.Title = "PhimDangChieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PhimDangChieu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maphim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+        @if (item.ngay < DateTime.Now)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.maphim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soluong)
+                </td>
+
+                
+            </tr>
+        }
+    }
+
+        </table>
